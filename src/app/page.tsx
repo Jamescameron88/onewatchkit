@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-neutral-50 text-neutral-900">
+    <main className="min-h-screen bg-gradient-to-b from-white to-neutral-100 text-neutral-900">
       <Hero />
       <BaseWatchCards watches={watches} />
 

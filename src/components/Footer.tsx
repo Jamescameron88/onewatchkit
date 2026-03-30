@@ -5,7 +5,7 @@ export function Footer() {
         <p className="font-medium text-neutral-900">OneWatchKit</p>
         <p className="mt-3 max-w-3xl leading-6">
           Some links on this site are affiliate links, which means we may earn a
-          commission if you buy through them.
+          commission if you buy through them. As an Amazon Associate, I earn from qualifying purchases.
         </p>
         <p className="mt-4">© 2026 OneWatchKit. All rights reserved.</p>
       </div>

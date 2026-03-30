@@ -5,7 +5,7 @@ export function KitSection({ watch }: { watch: WatchKit }) {
   return (
     <section
       id={watch.slug}
-      className="border-t border-neutral-200 bg-white scroll-mt-20"
+      className="border-t border-neutral-200 bg-gradient-to-b from-white to-neutral-50"
     >
       <div id="kits" className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-stretch">
@@ -29,7 +29,9 @@ export function KitSection({ watch }: { watch: WatchKit }) {
               <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
                 The {watch.name} - One Watch System
               </h2>
-              <p className="mt-3 text-lg text-neutral-700">{watch.descriptor}</p>
+              <p className="mt-3 text-lg text-neutral-700">
+                {watch.descriptor}
+              </p>
               <p className="mt-5 text-sm leading-6 text-neutral-700 md:text-base">
                 {watch.packSummary}
               </p>
@@ -66,7 +68,7 @@ export function KitSection({ watch }: { watch: WatchKit }) {
                   href={watch.kitBuyUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-2xl bg-neutral-900 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-neutral-800"
+                  className="inline-flex items-center justify-center rounded-2xl bg-black px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-neutral-800 hover:scale-[1.02]"
                 >
                   Buy This Kit
                 </a>
@@ -74,15 +76,18 @@ export function KitSection({ watch }: { watch: WatchKit }) {
                   href={watch.watchBuyUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-2xl border border-neutral-300 bg-white px-6 py-3.5 text-sm font-medium text-neutral-900 transition hover:bg-neutral-100"
+                  className="inline-flex items-center justify-center rounded-2xl border border-neutral-300 bg-white px-6 py-3.5 text-sm font-medium text-neutral-900 transition hover:bg-neutral-100 hover:scale-[1.02]"
                 >
                   View Recommended Watch
                 </a>
               </div>
 
               <p className="mt-4 text-sm text-neutral-500">
-                Most people don&apos;t need more watches - they need a better system.
+                 *** Buy all 4 items and create your full system!
               </p>
+              {/* <p className="text-sm text-neutral-500">
+                Buy all 4 items and create your full system.
+              </p> */}
             </div>
           </div>
         </div>
@@ -91,19 +96,21 @@ export function KitSection({ watch }: { watch: WatchKit }) {
           {watch.straps.map((strap) => (
             <div
               key={`${watch.id}-${strap.role}`}
-              className="rounded-3xl border border-neutral-200 bg-neutral-50 p-5"
+              className="group rounded-3xl border border-neutral-200 bg-white p-5 shadow-sm transition hover:shadow-md"
             >
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-200">
                 <Image
                   src={strap.image}
                   alt={`${watch.name} ${strap.role} strap`}
                   fill
-                  className="object-cover"
+                  className="object-cover transition duration-300 group-hover:scale-[1.03]"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
               <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-500">
-                {strap.role}
+                <span className="inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700">
+                  {strap.role}
+                </span>
               </p>
               <h3 className="mt-2 text-lg font-semibold">{strap.name}</h3>
               <p className="mt-1 text-sm text-neutral-600">{strap.material}</p>

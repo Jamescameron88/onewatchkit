@@ -1,38 +1,50 @@
 export function Hero() {
   return (
-    <section className="border-b border-neutral-200 bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
-        <p className="text-sm font-medium uppercase tracking-[0.18em] text-neutral-500">
+    <section className="relative overflow-hidden border-b border-neutral-200">
+      
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/hero.jpg"
+          alt="Watch kit"
+          className="h-full w-full object-cover"
+        />
+        
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
+      {/* Content */}
+      <div className="relative mx-auto max-w-6xl px-4 py-20 text-white md:px-6 md:py-28">
+        
+        <p className="text-sm font-medium uppercase tracking-[0.18em] text-neutral-300">
           OneWatchKit
         </p>
 
-        <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">
-          The Only Watch You’ll Ever Need
+        <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
+          One Watch. Three Straps. Every Situation.
         </h1>
 
-        <p className="mt-5 max-w-2xl text-base leading-7 text-neutral-700 md:text-lg">
-          One watch. Three straps. Every situation. Start with a proven base watch
-          or upgrade one you already own with a complete, curated strap system.
+        <p className="mt-5 max-w-xl text-base leading-7 text-neutral-200 md:text-lg">
+          Turn one affordable watch into a complete everyday, dress, and active system.
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <a
             href="#bases"
-            className="inline-flex items-center justify-center rounded-2xl bg-neutral-900 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-neutral-800"
+            className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-neutral-200"
           >
             Start Here
           </a>
+
           <a
             href="#kits"
-            className="inline-flex items-center justify-center rounded-2xl border border-neutral-300 bg-white px-6 py-3.5 text-sm font-medium text-neutral-900 transition hover:bg-neutral-100"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/40 px-6 py-3.5 text-sm font-medium text-white transition hover:bg-white/10"
           >
             I Have One
           </a>
         </div>
 
-        <p className="mt-6 max-w-xl text-sm leading-6 text-neutral-500">
-          Built around three proven watches: the Timex Expedition Scout, Casio Duro, and Timex Weekender.
-        </p>
       </div>
     </section>
   );
